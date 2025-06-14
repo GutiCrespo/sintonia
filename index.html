@@ -8,11 +8,12 @@
 </head>
 <body>
 
-    <section class="game">
+    <section class="game"></section>
+    <section class="boardgame">
         <div class="wheel">
             <img src="./public/06. Selector.svg" alt="selector" id="item-6" class="item  selector">
             <img src="./public/05. Plastic Abobe.svg" alt="plastic above" id="item-5" class="item  plastic-above">
-            <img src="./public/04. Plasctic Block.svg" alt="plastic bloc" id="item-4" class="item  plastic-block">
+            <img src="./public/04. Plasctic Block.svg" alt="plastic block" id="item-4" class="item  plastic-block blind-cover">
             <img src="./public/03. Pointers Circle.svg" alt="pointers circle" id="item-3" class="item  pointers-circle">
             <img src="./public/02. Base.svg" alt="base" id="item-2" class="item  base">
             <img src="./public/01. Rounded Outside.svg" alt="rounded outsie" id="item-1" class="item  rounded-outside">
@@ -23,5 +24,29 @@
             <img src="./public/Z. Full Plastic Boards.svg" alt="board" class="board">
         </div>
     </section>
+
+    <!-- Scripts -->
+    <script>
+
+        window.addEventListener('resize', scaleBoardgame)
+        window.addEventListener('DOMContentLoaded', scaleBoardgame)
+
+        function scaleBoardgame() {
+            const board = document.querySelector('.boardgame')
+            const baseWidth = 1000
+            const baseHeight = 1000
+            
+            const scaleX = window.innerWidth / baseWidth
+            const scaleY = window.innerHeight / baseHeight
+
+            const scale = Math.min(scaleX, scaleY) * 1.5
+
+            board.style.transform = `scale(${scale})`
+        }
+
+    </script>
+
+    <script src="app.js"></script>
+
 </body>
 </html>

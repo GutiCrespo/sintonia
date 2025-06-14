@@ -12,22 +12,25 @@ body{
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-}
-
-.game{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
     background-image: url(./public/Sintonia\ -\ BG-01.png);
     background-color: #010101;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+
+.boardgame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    transform-origin: center center;
+}
+
 .table{
     position: absolute;
+    resize: horizontal;
     /* z-index: 1; */
 }
 
@@ -70,6 +73,7 @@ body{
     z-index: -2;
     translate: -50% -55%;
     width: 450px;
+    /* cursor: pointer; */
 }
 #item-5{
     z-index: -1;
@@ -80,4 +84,9 @@ body{
     z-index: -0;
     translate: -50% -55%;
     width: 70px;
+}
+
+
+.blind-cover {
+    transition: transform 0.5s ease-in-out;
 }
