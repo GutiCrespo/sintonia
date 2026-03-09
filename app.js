@@ -1,12 +1,19 @@
-const spinner = document.getElementById('#spinner')
-const blindCover = document.getElementById('#spinner')
+document.addEventListener("DOMContentLoaded", () => {
 
-spinner.addEventListener('click', () => {
-    const spin = getRandomInt(360)
-    console.log(spin);
-    blindCover.style.transform = `rotate(${spin}deg)`
+    console.log("funcionando");
+    
+
+    const wheel = document.getElementById("item-3")
+
+    wheel.addEventListener("click", () => {
+        console.log("click funcionando");
+        const rotation = Math.random() * (2160 - 360) + 360
+
+        console.log(rotation);
+        
+
+        wheel.style.transition = "transform 2s ease-out"
+        wheel.style.transform = `rotate(${rotation}deg)`
+    })
+
 })
-
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max)
-    }
